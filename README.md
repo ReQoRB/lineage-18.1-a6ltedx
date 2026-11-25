@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Lineageos_logo.png" alt="LineageOS" width="260" />
+  <img src="https://xdaforums.com/proxy.php?image=https%3A%2F%2Fi.imgur.com%2Fk5tUT1V.png&hash=d45b54ad50fa2c2489fe487632e77e5f" alt="LineageOS" width="260" />
   <h3>LineageOS 18.1 (Unofficial) &bull; Samsung Galaxy A6 (SM-A600G / a6ltedx)</h3>
   <p>
     <code>Android 11</code> &bull;
