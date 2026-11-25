@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="reqorb" fetch="https://github.com/ReQoRB" />
+
+  <!-- Samsung Galaxy A6 SM-A600G (a6ltedx / Exynos 7870) -->
+  <project path="device/samsung/a6lte" name="android_device_samsung_a6ltedx" remote="reqorb" revision="lineage-18.1-a6ltedx" />
+  <project path="device/samsung/universal7870-common" name="android_device_samsung_universal7870-common" remote="reqorb" revision="lineage-18.1-a6ltedx" />
+  <project path="kernel/samsung/exynos7870" name="android_kernel_samsung_exynos7870" remote="reqorb" revision="lineage-18.1-a6ltedx" />
+  <project path="vendor/samsung/a6lte" name="android_vendor_samsung_a6ltedx" remote="reqorb" revision="lineage-18.1-a6ltedx" />
+  <project path="vendor/samsung/universal7870-common" name="android_vendor_samsung_universal7870-common" remote="reqorb" revision="lineage-18.1-a6ltedx" />
+  <project path="hardware/samsung" name="LineageOS/android_hardware_samsung" remote="github" revision="lineage-18.1" />
+</manifest>

@@ -1,0 +1,25 @@
+From c658892b092877bd554ab61cd7515050d69ecaeb Mon Sep 17 00:00:00 2001
+From: ReQo <justreqo@gmail.com>
+Date: Tue, 24 Nov 2026 12:44:49 -0800
+Subject: [PATCH] build: a6lte releasetools compatibility patch
+
+Change-Id: Ib4ce54385dd985183562b62d8fef71207d97589e
+---
+ tools/releasetools/edify_generator.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/tools/releasetools/edify_generator.py b/tools/releasetools/edify_generator.py
+index 0a0ff5f12..c65b427ac 100644
+--- a/tools/releasetools/edify_generator.py
++++ b/tools/releasetools/edify_generator.py
+@@ -136,6 +136,7 @@ class EdifyGenerator(object):
+              timestamp, common.ErrorCode.OLDER_BUILD, timestamp_text))
+ 
+   def AssertDevice(self, device):
++    return
+     """Assert that the device identifier is the given string."""
+     cmd = ('assert(' +
+            ' || \0'.join(['getprop("ro.product.device") == "%s" || getprop("ro.build.product") == "%s"'
+-- 
+2.25.1
+

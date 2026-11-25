@@ -1,0 +1,61 @@
+From f3a02d31ddfe3f381677c58db088ffec8308c219 Mon Sep 17 00:00:00 2001
+From: ReQo <justreqo@gmail.com>
+Date: Tue, 24 Nov 2026 12:44:50 -0800
+Subject: [PATCH] NetworkStack: kernel 3.18 netlink compatibility fix
+
+Change-Id: I30c17c6a069e2f90b01787b174127d55ce721438
+---
+ src/com/android/networkstack/netlink/TcpInfo.java    | 12 +++++++++---
+ .../networkstack/netlink/TcpSocketTracker.java       |  2 ++
+ 2 files changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/src/com/android/networkstack/netlink/TcpInfo.java b/src/com/android/networkstack/netlink/TcpInfo.java
+index 31a408f..27342c8 100644
+--- a/src/com/android/networkstack/netlink/TcpInfo.java
++++ b/src/com/android/networkstack/netlink/TcpInfo.java
+@@ -97,6 +97,7 @@ public class TcpInfo {
+     static final int SEGS_IN_OFFSET = getFieldOffset(Field.SEGS_IN);
+     @VisibleForTesting
+     static final int SEGS_OUT_OFFSET = getFieldOffset(Field.SEGS_OUT);
++    static final int TOTAL_RETRANS_OFFSET = getFieldOffset(Field.TOTAL_RETRANS);
+     final int mSegsIn;
+     final int mSegsOut;
+     final int mLost;
+@@ -114,12 +115,17 @@ public class TcpInfo {
+     private TcpInfo(@NonNull ByteBuffer bytes, int infolen) {
+         // SEGS_IN is the last required field in the buffer, so if the buffer is long enough for
+         // SEGS_IN it's long enough for everything
+-        if (SEGS_IN_OFFSET + Field.SEGS_IN.size > infolen) {
++        if (TOTAL_RETRANS_OFFSET + Field.TOTAL_RETRANS.size > infolen) {
+             throw new IllegalArgumentException("Length " + infolen + " is less than required.");
+         }
+         final int start = bytes.position();
+-        mSegsIn = bytes.getInt(start + SEGS_IN_OFFSET);
+-        mSegsOut = bytes.getInt(start + SEGS_OUT_OFFSET);
++        if (SEGS_IN_OFFSET + Field.SEGS_IN.size <= infolen) {
++            mSegsIn = bytes.getInt(start + SEGS_IN_OFFSET);
++            mSegsOut = bytes.getInt(start + SEGS_OUT_OFFSET);
++        } else {
++            mSegsIn = 0;
++            mSegsOut = 0;
++        }
+         mLost = bytes.getInt(start + LOST_OFFSET);
+         mRetransmits = bytes.get(start + RETRANSMITS_OFFSET);
+         // tcp_info structure grows over time as new fields are added. Jump to the end of the
+diff --git a/src/com/android/networkstack/netlink/TcpSocketTracker.java b/src/com/android/networkstack/netlink/TcpSocketTracker.java
+index ef33f13..ca806a3 100644
+--- a/src/com/android/networkstack/netlink/TcpSocketTracker.java
++++ b/src/com/android/networkstack/netlink/TcpSocketTracker.java
+@@ -302,7 +302,9 @@ public class TcpSocketTracker {
+                     new RoutingAttribute(bytes.getShort(), bytes.getShort());
+             final short dataLen = rtattr.getDataLength();
+             if (rtattr.rtaType == RoutingAttribute.INET_DIAG_INFO) {
++                final int infoStart = bytes.position();
+                 tcpInfo = TcpInfo.parse(bytes, dataLen);
++                bytes.position(infoStart + NetlinkConstants.alignedLengthOf(dataLen));
+             } else if (rtattr.rtaType == RoutingAttribute.INET_DIAG_MARK) {
+                 mark = bytes.getInt();
+             } else {
+-- 
+2.25.1
+

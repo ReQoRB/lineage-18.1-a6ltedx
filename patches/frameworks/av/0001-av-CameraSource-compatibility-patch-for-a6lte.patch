@@ -1,0 +1,29 @@
+From a5fe81079ea25fd7f30e03e05240648a5221afb8 Mon Sep 17 00:00:00 2001
+From: ReQo <justreqo@gmail.com>
+Date: Tue, 24 Nov 2026 12:44:49 -0800
+Subject: [PATCH] av: CameraSource compatibility patch for a6lte
+
+Change-Id: If533a0da8531acb81dfcf0655888ccfeb03811f4
+---
+ media/libstagefright/CameraSource.cpp | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/media/libstagefright/CameraSource.cpp b/media/libstagefright/CameraSource.cpp
+index be3fde8a0c..ba63792ec1 100644
+--- a/media/libstagefright/CameraSource.cpp
++++ b/media/libstagefright/CameraSource.cpp
+@@ -146,6 +146,11 @@ static int32_t getColorFormat(const char* colorFormat) {
+         return OMX_COLOR_FormatYUV420SemiPlanar;
+     }
+ 
++    if (!strcmp(colorFormat, "nv21")) {
++        static const int OMX_SEC_COLOR_FormatNV21Linear = 0x7F000011;
++        return OMX_SEC_COLOR_FormatNV21Linear;
++    }
++
+     if (!strcmp(colorFormat, CameraParameters::PIXEL_FORMAT_YUV422I)) {
+         return OMX_COLOR_FormatYCbYCr;
+     }
+-- 
+2.25.1
+
