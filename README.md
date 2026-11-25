@@ -6,4 +6,4 @@
 - **Device Tree (SM-A600G / a6ltedx):** https://github.com/ReQoRB/android_device_samsung_a6ltedx/tree/lineage-18.1-a6ltedx
 - **Common Tree (universal7870-common):** https://github.com/ReQoRB/android_device_samsung_universal7870-common/tree/lineage-18.1-a6ltedx
 - **Status:** Stable / Unofficial
-- **Created / Last Updated:** 2026-11-24
+- **Last Updated:** 2026-11-24
