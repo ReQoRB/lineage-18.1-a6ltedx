@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://xdaforums.com/proxy.php?image=https%3A%2F%2Fi.imgur.com%2Fk5tUT1V.png&hash=d45b54ad50fa2c2489fe487632e77e5f" alt="LineageOS" width="260" />
-  <h3>LineageOS 18.1 (Unofficial) &bull; Samsung Galaxy A6 (SM-A600G / a6ltedx)</h3>
+  <h3>LineageOS 18.1 (Unofficial) &bull; Samsung Galaxy A6 2018 (SM-A600G / a6ltedx)</h3>
   <p>
     <code>Android 11</code> &bull;
     <code>Linux 3.18.140</code> &bull;
