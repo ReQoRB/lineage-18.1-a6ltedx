@@ -5,7 +5,6 @@
     <code>Android 11</code> &bull;
     <code>Linux 3.18.140</code> &bull;
     <code>SELinux Enforcing</code> &bull;
-    <a href="https://github.com/ReQoRB/lineage-18.1-a6ltedx/releases">Releases</a>
   </p>
 </div>
 
