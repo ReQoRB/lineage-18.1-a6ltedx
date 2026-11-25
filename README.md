@@ -2,8 +2,8 @@
 
 - **ROM OS Version:** Android 11 (LineageOS 18.1)
 - **ROM Kernel:** Linux 3.18.140
-- **SELinux Status:** True **Enforcing**
-- **Target Variant:** Samsung Galaxy A6 2018 — **SM-A600G (`a6ltedx`)**, Exynos 7870 (single-mic, non-NFC)
+- **SELinux Status:** Enforcing
+- **Target Variant:** Samsung Galaxy A6 2018 — **SM-A600G (`a6ltedx`)**
 - **Status:** Stable / Unofficial
 - **Last Updated:** 2026-11-24
 
