@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="[[[https://upload.wikimedia.org/wikipedia/commons/a/a3/Lineageos_logo.png](https://camo.githubusercontent.com/1a5ee3b1b9a497ca82cca93d843450ded05353d03e62428aaf1fe33f66d132d8/68747470733a2f2f786461666f72756d732e636f6d2f70726f78792e7068703f696d6167653d6874747073253341253246253246692e696d6775722e636f6d2532466b3574555431562e706e6726686173683d6434356235346164353066613263323438396665343837363332653737653566)](https://xdaforums.com/proxy.php?image=https%3A%2F%2Fi.imgur.com%2Fk5tUT1V.png&hash=d45b54ad50fa2c2489fe487632e77e5f)](https://xdaforums.com/proxy.php?image=https%3A%2F%2Fi.imgur.com%2Fk5tUT1V.png&hash=d45b54ad50fa2c2489fe487632e77e5f)" alt="LineageOS" width="260" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Lineageos_logo.png" alt="LineageOS" width="260" />
   <h3>LineageOS 18.1 (Unofficial) &bull; Samsung Galaxy A6 (SM-A600G / a6ltedx)</h3>
   <p>
     <code>Android 11</code> &bull;
