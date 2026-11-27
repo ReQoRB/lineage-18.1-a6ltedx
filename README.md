@@ -3,8 +3,7 @@
   <h3>LineageOS 18.1 &bull; Samsung Galaxy A6 (2018)</h3>
   <p>
     <code>Android 11</code> &bull;
-    <code>Linux 3.18.140</code> &bull;
-    <code>SELinux Enforcing</code>
+    <code>Linux 3.18.140</code>
   </p>
 </div>
 
